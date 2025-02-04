@@ -31,5 +31,6 @@ public class DerivedClass : MyClass {
     public void Func3() {
         Console.WriteLine("This is Func3");
         // TODO: Func2 can be accessed because this is a subclass of MyClass
+        base.Func2();
     }
 }
