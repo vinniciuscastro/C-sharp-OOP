@@ -2,7 +2,7 @@
 // The "required" modifier
 
 public class Employee {
-    public Employee() {}
+    public Employee(string v) {}
 
     // TODO: The SetsRequiredMembers attribute indicates that the constructor sets the 
     // required members, but the compiler doesn't actually check - it trusts you
@@ -16,7 +16,7 @@ public class Employee {
 
     // TODO: The "required" keyword means that a value must be assigned during construction
     // Members that are required must be at least as visible as the containing type
-    public int ID {
+    public required int ID {
         get; 
         init;
     }
@@ -26,7 +26,7 @@ public class Employee {
     public string? FirstName {
         get; set;
     }
-    public string LastName {
+    public required string LastName {
         get; set;
     }
 
