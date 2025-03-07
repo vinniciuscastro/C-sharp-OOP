@@ -11,6 +11,15 @@ public class Temperature {
     }
 
     // TODO: static methods use the 'static' modifier in their declaration
+    public static double FtoC(double Ftemp) {
+        double Ctemp = (Ftemp - 32.0) * (5.0 / 9.0);
+        return Ctemp;
+    }
+
+    public static double CtoF(double Ctemp) {
+        double Ftemp = (Ctemp * (9.0 / 5.0)) + 32.0;
+        return Ftemp;
+    }
 
     // Regular property implementation
     public double Temp { get; set; }
@@ -18,6 +27,10 @@ public class Temperature {
     // TODO: You can overload methods and have one of them be static. This doesn't work with properties
     public bool IsRoomTemp() {
         return Temp >= ROOM_TEMP_LOWER_C && Temp <= ROOM_TEMP_UPPER_C;
+    }
+
+    public static bool IsRoomTemp(double temp) {
+        return temp >= ROOM_TEMP_LOWER_C && temp <= ROOM_TEMP_UPPER_C;
     }
 
     // This does not work - will cause a compile error
